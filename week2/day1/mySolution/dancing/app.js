@@ -9,7 +9,6 @@ $(function() {
     }
   }
 
-  //$x('//*');  ????
   let childs;
   let currentTarget;
   $('.grid').on('click', function(e) {

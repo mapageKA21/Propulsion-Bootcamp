@@ -4,7 +4,7 @@ $(function() {
 
   for (var i = 0; i < 5; i++) {
     for (var y = 0; y < 5; y++) {
-      let grid = $('<div class="grid"</div>')
+      let grid = $('<div class="grid"</div>');
         $('#floor').append(grid);
     }
   }

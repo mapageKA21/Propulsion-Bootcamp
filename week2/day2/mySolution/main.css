@@ -2,7 +2,6 @@
   display: flex;
   height: 97vh;
   width: 100%;
-  /*justify-content: space-around;*/
   border-color: black;
   border-style: solid;
   border-width: 1px;
@@ -10,8 +9,5 @@
 
 .column {
   padding: 10px;
-/*  border-color: black;
-  border-style: solid;
-  border-width: 1px;*/
   border-right: 1px solid black;
 }

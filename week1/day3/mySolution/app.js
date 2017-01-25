@@ -15,21 +15,14 @@ Ball.prototype.render = function(context) {
 
 Ball.prototype.move = function(height, width) {
   let newXpos = this.position[0] + this.velocity[0];
-  if (newXpos > width) {
-    this.velocity[0] = -this.velocity[0];
-  }
-  if (newXpos < 0) {
-    this.velocity[0] = -this.velocity[0];
-  }
-  this.position[0] = newXpos;
-
   let newYpos = this.position[1] + this.velocity[1];
-  if (newYpos < 0 ) {
-    this.velocity[1] = -this.velocity[1];
-  }
-  if (newYpos > height) {
-    this.velocity[1] = -this.velocity[1];
-  }
+  
+  if (newXpos > width) this.velocity[0] = -this.velocity[0];
+  if (newXpos < 0) this.velocity[0] = -this.velocity[0];
+  if (newYpos < 0 ) this.velocity[1] = -this.velocity[1];
+  if (newYpos > height) this.velocity[1] = -this.velocity[1];
+
+  this.position[0] = newXpos;
   this.position[1] = newYpos;
 }
 

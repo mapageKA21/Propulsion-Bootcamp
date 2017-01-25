@@ -32,42 +32,54 @@ $(function() {
       fetchStarship(link);
     });
 
+    var currentStarship;
+
     fetchStarship = function(url) {
       fetch(url)
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        renderShip(data);
+        currentStarship = data;
+        var pilotLinks = data.pilots;
+        var promises = pilotLinks.map(link => fetch(link));
+        return Promise.all(promises);
+      })
+      .then(function(responses) {
+        return Promise.all(responses.map(res => res.json()))
+      })
+      .then(function(pilots) {
+        currentStarship.currentPilots = pilots;
+        renderShip();
       })
     }
 
-    renderShip = function(ship) {
+    renderShip = function() {
       $( "#starship" ).empty();
       var shipDiv = $('<div>').addClass('ship');
-      var shipTitle = $('<h5>').text(ship.name);
+      var shipTitle = $('<h5>').text(currentStarship.name);
       var pilotsElement = $('<ul>').addClass('pilots');
-
-      ship.pilots.forEach(function(pilot) {
+      currentStarship.currentPilots.forEach(function(pilot) {
         var link = $('<a>')
                   .addClass('pilot-link')
-                  .text(pilot)
-                  .data('url', pilot)
-                  .attr('href', '#');
+                  .text(pilot.name)
+                  // .data('url', pilot.url) not expected
+                  .attr('href', '#')
+                  .attr('link', pilot.url);
         var li = $('<li>').append(link);
         pilotsElement.append(li);
         
         $('#starship').append(shipDiv).append(shipTitle).append(pilotsElement);
       });
 
-      if (ship.pilots.length === 0) 
+      if (currentStarship.pilots.length === 0) 
         $('#starship').append(shipDiv).append(shipTitle).append(`<p>No pilots</p>`);
     
     }
 
 
-    $('#starship').on('click', '.pilots', function(data) {
-      let link = $(data.target).text();
+    $('#starship').on('click', '.pilot-link', function(data) {
+      let link = $(data.target).attr('link');
       fetchPilots(link);
     });
 
