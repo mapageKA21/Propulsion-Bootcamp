@@ -12,7 +12,7 @@ StoryItemView.prototype.render = function() {
     : $('<img>');
   var headerEl = $('<div>').addClass('card-title').text(this.model.title)
   cardEl
-    .append($('<button>Add to favourites</button>'))
+    .append($('<button class="fav">Add to favourites</button>'))
     .append($('<div>').addClass('card-image').html(imageEl))
     .append($('<div>').addClass('card-header').html(headerEl))
     .append($('<div>').addClass('card-body').text(this.model.body));
