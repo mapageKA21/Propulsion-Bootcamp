@@ -30,6 +30,7 @@ public class Account {
 	public Account(Customer customer, double balance) {
 		this.customer = customer;
 		this.balance = balance;
+
 		this.customer.setAccount(this);
 	}
 

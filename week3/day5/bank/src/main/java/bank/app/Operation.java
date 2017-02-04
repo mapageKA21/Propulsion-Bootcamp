@@ -14,33 +14,45 @@
  * limitations under the License.
  */
 
-package bidirectional;
+package bank.app;
 
 /**
  * @author Sam Brannen
  */
-public class Book {
+enum Operation {
 
-	private final String title;
+	EXIT("Exit"),
 
-	private final Author author;
+	CUSTOMER_LIST("Print all customers"),
 
-	public Book(String title, Author author) {
-		this.title = title;
-		this.author = author;
-	}
+	NEW_CUSTOMER("Create a new customer"),
 
-	public String getTitle() {
-		return this.title;
-	}
+	FIND_CUSTOMER("Find a customer"),
 
-	public Author getAuthor() {
-		return this.author;
+	DELETE_CUSTOMER("Delete a customer"),
+
+	CREDIT_ACCOUNT("Credit an account"),
+
+	DEBIT_ACCOUNT("Debit an account");
+
+	private final String displayText;
+
+	private Operation(String displayText) {
+		this.displayText = displayText;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [title=" + this.title + ", author=" + this.author.getName() + "]";
+		return String.format("%s: %s", ordinal(), this.displayText);
+	}
+
+	static Operation fromOrdinal(int ordinal) {
+		for (Operation operation : values()) {
+			if (operation.ordinal() == ordinal) {
+				return operation;
+			}
+		}
+		return null;
 	}
 
 }

@@ -34,7 +34,7 @@ public class BankService {
 		return new ArrayList<>(this.database.values());
 	}
 
-	Customer findCustomerById(String id) {
+	public Customer findCustomerById(String id) {
 		return this.database.get(id);
 	}
 
