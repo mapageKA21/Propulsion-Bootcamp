@@ -92,6 +92,7 @@ function longest(str1, str2) {
   let toArray = str3.split('');
   filterArray = [];
   toArray.forEach(function(el) {
+    debugger;
     if (filterArray.indexOf(el) === -1) filterArray.push(el);
   });
   return filterArray.sort().join('');
