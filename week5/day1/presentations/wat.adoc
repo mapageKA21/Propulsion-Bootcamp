@@ -1,0 +1,11 @@
+include::../../../_settings_deck.adoc[]
+// include::../../../_settings_reveal.adoc[]
+
+// beige, blond, default, moon, night, serif, simple, sky, solarized
+// :revealjs_customtheme: reveal.js/css/theme/serif.css
+
+= WAT
+
+== WAT
+
+video::ynENRrsjqqI[youtube]

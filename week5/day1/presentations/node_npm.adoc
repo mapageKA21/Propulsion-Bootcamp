@@ -1,0 +1,65 @@
+include::../../../_settings_deck.adoc[]
+// include::../../../_settings_reveal.adoc[]
+
+// beige, blond, default, moon, night, serif, simple, sky, solarized
+// :revealjs_customtheme: reveal.js/css/theme/serif.css
+
+= Node and NPM
+
+== Node and NPM
+
+* Node and npm
+* Node Projects
+* Node modules
+
+== Node and npm
+
+Node is a JavaScript runtime environment.
+
+Node Package Manager or npm is the default package manager for Node.
+
+Packages are just someone else's code that we can use.
+
+Packages can be installed locally in your project or globally in your computer.
+
+== Node Projects
+
+- `npm init`
+- `npm install`
+- `package.json`
+- `/node_modules`
+
+== Node Modules
+
+.Export:
+[source,javascript,indent=0]
+----
+function calculateArea(apartment) {
+  // ...
+}
+
+module.exports.calculateArea = calculateArea;
+----
+
+.Import
+[source,javascript,indent=0]
+----
+var myModule = require('./filename.js');
+
+// ...
+var firstArea = myModule.calculateArea(firstApartment);
+----
+
+== Import npm package
+
+.Example:
+[source,javascript,indent=0]
+----
+var asciify = require('asciify');
+----
+
+.Generalization
+[source,javascript,indent=0]
+----
+var someVar = require(<npm package name>);
+----
