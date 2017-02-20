@@ -1,0 +1,12 @@
+.card {
+  background-image: url('https://deckofcardsapi.com/static/img/KH.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 113px;
+  width: 75px ?if media (max-width: 750px) and (orientation: landscape);
+  width: 170px ?if media (min-width: 751px) and (max-width: 1200px);
+  height: 157px;
+  height: 105px ?if media (max-width: 750px) and (orientation: landscape);
+  height: 236px ?if media (min-width: 751px) and (max-width: 1200px);
+}

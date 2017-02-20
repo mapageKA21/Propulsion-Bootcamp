@@ -1,0 +1,10 @@
+h3 {
+  color: red;
+}
+
+.box {
+  background-image: url('./fry.jpg');
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}

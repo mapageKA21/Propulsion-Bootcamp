@@ -1,0 +1,44 @@
+- Webpack setup
+- Desktop Layout
+- Mobile Layout
+- JS Behavior
+  - Without jQuery
+  - http://youmightnotneedjquery.com/
+  - Use ES6
+- Deck Class
+  - Fetch deckId
+  - Initialize a new Deck passing deckId
+- Player Class
+  - On initialize pass deck and set listener on Start Button
+- Render Initial Cards
+  - Remove all previous cards
+  - Create element and append for each card
+- Implement Hit Button
+  - Fetch one card
+  - Add it to array of cards
+  - Render Cards
+- Implement Stand Button
+  - In the player initialization, add one more parameter: a function
+  - This function will be called on stand
+  - It will trigger the Dealer moves
+- Dealer Class
+  - When called the function in the stand.
+  - It should draw 2 cards
+  - Keep drawing while not busted and score less than 17
+  - Copy and change from Player Class
+- Game Class
+  - In the Dealer Initialization, add one more parameter: a function
+  - This function will be called when the dealer busts or stands
+  - Create a Game Class that will have a `gameOver` method.
+  - It will be passed to the initialization of the dealer
+  - Add the dealer and player to the Game instance: `addDealer`, `addPlayer`
+  - Compare both scores and choose winner
+- Add CSS Modules
+  - Split `style.css` into `style.css` and `card.css`.
+  - Import the `card.css` where you use it.
+  - `style.css` should be linked in html
+- Add PostCSS
+  - Try to implement `postcss-if-media` for the cards media queries
+  - Remember that the stylesheet linked in the html does not pass through Webpack, which means no PostCSS there
+- Refactor
+  - Add the Hand Class

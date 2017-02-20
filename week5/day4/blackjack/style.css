@@ -1,0 +1,85 @@
+body {
+  background-color: green;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
+  height: 100%;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card--buttons {
+  width: 113px;
+  height: 157px;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card--buttons--mobile {
+  display: none;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dealer {
+  padding-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.player {
+  padding-bottom: 30px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  color: white;
+}
+
+@media only screen
+  and (max-width: 750px)
+  and (orientation: portrait)
+  and (min-resolution: 2dppx) {
+  .card--buttons {
+    display: none;
+  }
+
+  .card--buttons--mobile {
+    display: flex;
+  }
+}
+
+@media only screen
+  and (max-width: 750px)
+  and (orientation: landscape)
+  and (min-resolution: 2dppx) {
+  .card--buttons {
+    width: 75px;
+    height: 105px;
+  }
+}
+
+@media only screen
+  and (min-width: 751px)
+  and (max-width: 1200px) {
+  .card--buttons {
+    width: 170px;
+    height: 236px;
+  }
+}
