@@ -1,4 +1,3 @@
-// actions, provider and connect 
 export const addTodo = (text) => {
   return {
     type: 'ADD_TODO',

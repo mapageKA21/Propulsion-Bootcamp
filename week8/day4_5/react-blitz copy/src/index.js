@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/index.js'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import App from './App';
 import './index.css';
-import { Provider } from 'react-redux';
-import store from './store';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 ReactDOM.render(
-  <Provider store={ store }>
-  <App />
-  </Provider>,
+  <App />,
   document.getElementById('root')
 );
+
 const myHeaders = new Headers({
 	'Content-Type':'application/json'
 })

@@ -1,0 +1,11 @@
+.BlitzItem-username {
+  margin: 0px;
+  font-size: small;
+  color: #999;
+}
+
+.BlitzItem-content {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 0.8em;
+}

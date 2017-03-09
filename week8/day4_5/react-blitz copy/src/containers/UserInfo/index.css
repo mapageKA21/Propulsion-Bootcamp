@@ -1,0 +1,30 @@
+.UserInfo {
+  padding: 16px;
+}
+
+.UserInfo:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.UserInfo-avatar {
+  /*float: left;*/
+  display: inline-block;
+}
+
+.UserInfo-details {
+  margin-left: 16px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.UserInfo-details > h4 {
+  margin: 1em 0;
+}
+
+.UserInfo-details > p {
+  font-size: small;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
