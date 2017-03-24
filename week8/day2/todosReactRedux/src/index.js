@@ -11,21 +11,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-const myHeaders = new Headers({
-	'Content-Type':'application/json'
-})
-
-const user = {
-	email: 'ake0@email.com',
-	password: 'password'
-}
-
-const config = {
-	method: 'POST',
-	headers: myHeaders,
-	body: JSON.stringify(data)
-}
-
-fetch('https://propulsion-blitz.herokuapp.com/api/login', config)
-	.then(res => res.json())
-	.then(user => console.log(user));
